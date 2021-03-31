@@ -1,9 +1,15 @@
 #body {
   background-color: #931B1D;
+  color: white;
 }
 
-#content {
+.nav-link, .nav-link:hover {
   color: white;
+  cursor: pointer;
+}
+
+#a-green {
+  background-color: #197D3F;
 }
 
 #first-img {
