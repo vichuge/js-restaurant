@@ -1,0 +1,23 @@
+{
+  "name": "js-restaurant",
+  "version": "1.0.0",
+  "description": "This problem is my first project using js with webpack technology, this will be a restaurant page.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vichuge/js-restaurant.git"
+  },
+  "author": "Victor Pacheco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vichuge/js-restaurant/issues"
+  },
+  "homepage": "https://github.com/vichuge/js-restaurant#readme",
+  "devDependencies": {
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.6.0"
+  }
+}
