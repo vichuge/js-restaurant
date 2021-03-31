@@ -3,8 +3,6 @@ import './style.css';
 import banner from './tt.jpg';
 
 function component() {
-  const content = document.getElementById('content');
-  
   const img = new Image();
   img.classList.add('img-fluid');
   img.classList.add('rounded');
