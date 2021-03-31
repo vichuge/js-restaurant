@@ -1,15 +1,16 @@
 #body {
-  background-color: #931B1D;
+  background-color: #931b1d;
   color: white;
 }
 
-.nav-link, .nav-link:hover {
+.nav-link, 
+.nav-link:hover {
   color: white;
   cursor: pointer;
 }
 
 #a-green {
-  background-color: #197D3F;
+  background-color: #197d3f;
 }
 
 #first-img {
