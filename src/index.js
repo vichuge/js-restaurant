@@ -2,6 +2,69 @@ import _ from 'lodash';
 import './style.css';
 import banner from './tt.jpg';
 
+function addRowCol(obj, c) {
+  const content = document.getElementById(c);
+  const row = document.createElement('div');
+  row.classList.add('row');
+  row.classList.add('text-center');
+  const col = document.createElement('div');
+  col.classList.add('col-12');
+  row.appendChild(col);
+  col.appendChild(obj);
+  content.appendChild(row);
+}
+
+function changeText(tag) {
+  const text = document.getElementById('text');
+  text.innerHTML = '';
+  const p = document.createElement('p');
+  switch (tag) {
+    case 'about':
+      p.innerHTML = ' We\'re an Italian restaurante since 1955';
+      break;
+    case 'menu':
+      p.innerHTML = 'Pasta, meat, vine and more...';
+      break;
+    case 'location':
+      p.innerHTML = 'We\'re on Bakersfield street, number 221b';
+      break;
+    default:
+      p.innerHTML = 'Error! Default case';
+      break;
+  }
+  addRowCol(p, 'text');
+}
+
+function changeNav(tag) {
+  const arr = document.getElementsByClassName('nav-link');
+
+  for (let i = 0; i < arr.length; i += 1) {
+    arr[i].id = '';
+    arr[i].classList.remove('active');
+    const clas = `nav-link ${tag}`;
+    if (arr[i].className === clas) {
+      arr[i].id = 'a-green';
+      arr[i].classList.add('active');
+      changeText(tag);
+    }
+  }
+}
+
+function addLi(ul, str, tag, status = false) {
+  const li = document.createElement('li');
+  li.classList.add('nav-item');
+  const a = document.createElement('a');
+  a.classList.add('nav-link');
+  a.classList.add(tag);
+  const b = (status === true) ? (a.classList.add('active')) : ('');
+  const c = (status === true) ? (a.id = 'a-green') : ('');
+  a.addEventListener('click', () => { changeNav(tag); });
+  a.onclick = 'this()';
+  a.innerHTML = str;
+  li.appendChild(a);
+  ul.appendChild(li);
+}
+
 function component() {
   const img = new Image();
   img.classList.add('img-fluid');
@@ -35,69 +98,6 @@ function component() {
   document.body.appendChild(text);
 
   changeText('about');
-}
-
-function changeText(tag) {
-  const text = document.getElementById('text');
-  text.innerHTML = '';
-  const p = document.createElement('p');
-  switch (tag) {
-    case 'about':
-      p.innerHTML = ' We\'re an Italian restaurante since 1955';
-      break;
-    case 'menu':
-      p.innerHTML = 'Pasta, meat, vine and more...';
-      break;
-    case 'location':
-      p.innerHTML = 'We\'re on Bakersfield street, number 221b';
-      break;
-  }
-  addRowCol(p, 'text');
-}
-
-function addRowCol(obj, c) {
-  const content = document.getElementById(c);
-  const row = document.createElement('div');
-  row.classList.add('row');
-  row.classList.add('text-center');
-  const col = document.createElement('div');
-  col.classList.add('col-12');
-  row.appendChild(col);
-  col.appendChild(obj);
-  content.appendChild(row);
-}
-
-function addLi(ul, str, tag, status = false) {
-  const li = document.createElement('li');
-  li.classList.add('nav-item');
-  const a = document.createElement('a');
-  a.classList.add('nav-link');
-  a.classList.add(tag);
-  (status == true) ? a.classList.add('active') : '';
-  (status == true) ? a.id = 'a-green' : '';
-  a.addEventListener('click', () => { changeNav(tag); });
-  a.onclick = 'this()';
-  a.innerHTML = str;
-  li.appendChild(a);
-  ul.appendChild(li);
-}
-
-function changeNav(tag) {
-  const arr = document.getElementsByClassName('nav-link');
-
-  for (let i = 0; i < arr.length; i += 1) {
-    arr[i].id = '';
-    arr[i].classList.remove('active');
-    const clas = `nav-link ${tag}`;
-    if (arr[i].className == clas) {
-      arr[i].id = 'a-green';
-      arr[i].classList.add('active');
-      changeText(tag);
-    }
-  }
-  // const a = document.getElementsByClassName(`${tag}`);
-  // a.id = 'a-green';
-  // a.classList.add('active');
 }
 
 component();
