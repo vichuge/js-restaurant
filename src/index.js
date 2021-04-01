@@ -2,6 +2,11 @@ import _ from 'lodash';
 import './style.css';
 import banner from './tt.jpg';
 
+import printAbout from './about';
+import printMenu from './menu';
+import printLocation from './location';
+import printDefault from './default';
+
 const addRowCol = (obj, c) => {
   const content = document.getElementById(c);
   const row = document.createElement('div');
@@ -15,24 +20,20 @@ const addRowCol = (obj, c) => {
 };
 
 const changeText = (tag) => {
-  const text = document.getElementById('text');
-  text.innerHTML = '';
-  const p = document.createElement('p');
   switch (tag) {
     case 'about':
-      p.innerHTML = ' We\'re an Italian restaurante since 1955';
+      printAbout();
       break;
     case 'menu':
-      p.innerHTML = 'Pasta, meat, vine and more...';
+      printMenu();
       break;
     case 'location':
-      p.innerHTML = 'We\'re on Bakersfield street, number 221b';
+      printLocation();
       break;
     default:
-      p.innerHTML = 'Error! Default case';
+      printDefault();
       break;
   }
-  addRowCol(p, 'text');
 };
 
 const changeNav = (tag) => {
