@@ -2,7 +2,7 @@ import _ from 'lodash';
 import './style.css';
 import banner from './tt.jpg';
 
-function addRowCol(obj, c) {
+const addRowCol = (obj, c) => {
   const content = document.getElementById(c);
   const row = document.createElement('div');
   row.classList.add('row');
@@ -12,9 +12,9 @@ function addRowCol(obj, c) {
   row.appendChild(col);
   col.appendChild(obj);
   content.appendChild(row);
-}
+};
 
-function changeText(tag) {
+const changeText = (tag) => {
   const text = document.getElementById('text');
   text.innerHTML = '';
   const p = document.createElement('p');
@@ -33,9 +33,9 @@ function changeText(tag) {
       break;
   }
   addRowCol(p, 'text');
-}
+};
 
-function changeNav(tag) {
+const changeNav = (tag) => {
   const arr = document.getElementsByClassName('nav-link');
 
   for (let i = 0; i < arr.length; i += 1) {
@@ -48,9 +48,9 @@ function changeNav(tag) {
       changeText(tag);
     }
   }
-}
+};
 
-function addLi(ul, str, tag, status = false) {
+const addLi = (ul, str, tag, status = false) => {
   const li = document.createElement('li');
   li.classList.add('nav-item');
   const a = document.createElement('a');
@@ -63,9 +63,9 @@ function addLi(ul, str, tag, status = false) {
   a.innerHTML = str;
   li.appendChild(a);
   ul.appendChild(li);
-}
+};
 
-function component() {
+const component = () => {
   const img = new Image();
   img.classList.add('img-fluid');
   img.classList.add('rounded');
@@ -98,6 +98,6 @@ function component() {
   document.body.appendChild(text);
 
   changeText('about');
-}
+};
 
 component();
