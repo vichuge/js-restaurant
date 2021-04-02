@@ -1,0 +1,36 @@
+{
+  "name": "js-restaurant",
+  "version": "1.0.0",
+  "description": "This problem is my first project using js with webpack technology, this will be a restaurant page.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open",
+    "watch": "webpack --watch --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vichuge/js-restaurant.git"
+  },
+  "author": "Victor Pacheco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vichuge/js-restaurant/issues"
+  },
+  "homepage": "https://github.com/vichuge/js-restaurant#readme",
+  "devDependencies": {
+    "babel-eslint": "10.1.x",
+    "css-loader": "^5.2.0",
+    "eslint": "6.8.x",
+    "eslint-config-airbnb-base": "14.1.x",
+    "eslint-plugin-import": "2.20.x",
+    "file-loader": "^6.2.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.6.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

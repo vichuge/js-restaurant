@@ -1,0 +1,19 @@
+#body {
+  background-color: #931b1d;
+  color: white;
+}
+
+.nav-link,
+.nav-link:hover {
+  color: white;
+  cursor: pointer;
+}
+
+#a-green {
+  background-color: #197d3f;
+}
+
+#first-img {
+  height: 20em;
+  width: auto;
+}
